@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonQuest", "DragonQuest.csproj", "{458B3650-3540-4AD6-8537-CAF6E076485D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonQuest-Lib", "..\DragonQuest-Lib\DragonQuest-Lib.csproj", "{8CBD20DC-5766-4E87-9911-61CEF47E3479}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{458B3650-3540-4AD6-8537-CAF6E076485D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458B3650-3540-4AD6-8537-CAF6E076485D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458B3650-3540-4AD6-8537-CAF6E076485D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458B3650-3540-4AD6-8537-CAF6E076485D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CBD20DC-5766-4E87-9911-61CEF47E3479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CBD20DC-5766-4E87-9911-61CEF47E3479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CBD20DC-5766-4E87-9911-61CEF47E3479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CBD20DC-5766-4E87-9911-61CEF47E3479}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD43BCDA-0E27-4A3C-8B29-169B6FE7CC97}
+	EndGlobalSection
+EndGlobal

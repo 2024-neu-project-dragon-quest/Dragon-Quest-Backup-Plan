@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DragonQuest/1.0.0": {
+        "dependencies": {
+          "DragonQuest-Lib": "1.0.0"
+        },
+        "runtime": {
+          "DragonQuest.dll": {}
+        }
+      },
+      "DragonQuest-Lib/1.0.0": {
+        "runtime": {
+          "DragonQuest-Lib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DragonQuest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DragonQuest-Lib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
