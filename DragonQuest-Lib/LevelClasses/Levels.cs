@@ -6,6 +6,7 @@
         public Levels(StreamReader f) {
             Level level = new();
             
+            //This just parses the Levels.txt file into actually usable stuff
             while (!f.EndOfStream)
             {
                 string l = f.ReadLine()!;
@@ -37,6 +38,6 @@
             }
         }
 
-        public Level Data(int levelId) => levels.Where(x => x.id == levelId).First();
+        public Level Data(int levelId) => levels.Where(x => x.id == levelId).First(); //Helps retrieve level data
     }
 }

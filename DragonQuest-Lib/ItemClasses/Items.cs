@@ -4,6 +4,7 @@
     {
         public List<Item> items = [];
         public Items(string l) {
+            //Does the same as Levels.cs
             for (int i = 0; i < l.Split(";").Length; i++)
             {
                 string[] itemAttrs = l.Split(";")[i].Replace("[", "").Replace("]", "").Split(",");
@@ -37,8 +38,8 @@
                         }
                     }
 
-                    // > idiot.png
-                    if (item.id != 0 && item.x != 0 && item.y != 0 && item.name != null)
+                    // > idiot.png (found a better solution finally, it was worse before, but I'll just leave this here lol)
+                    if (!new[] { item.id, item.x, item.y }.Contains(0) && item.name != null)
                     {
                         items.Add(item);
                         item = new();
