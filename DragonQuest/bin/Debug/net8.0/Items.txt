@@ -1,6 +1,0 @@
-ID=1
-Name=Test;Item;1
-End
-ID=2
-Name=Test;Item;2
-End
