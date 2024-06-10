@@ -15,7 +15,34 @@ int playerPosX = 1; //I'll make a Player class later
 int playerPosY = 1;
 int levelID = 3;
 
+initConsole();
 printMap(levels.Data(levelID), ConsoleColor.White, ConsoleColor.Black, playerPosX, playerPosY); //This prints the outline and the items of a map
+
+void initConsole() {
+
+    Console.Clear();
+    Console.CursorVisible = false;
+
+    for (int x = 0; x < Console.WindowWidth; x++)
+        for (int y = 0; y < Console.WindowHeight; y++) RealWriteAt(x, y, ' ', ConsoleColor.Black, null);
+
+}
+
+void RealWriteAt(int x, int y, char c, ConsoleColor? bgc, ConsoleColor? fgc) {
+
+    (int left, int top) = Console.GetCursorPosition();
+    ConsoleColor originalBGC = Console.BackgroundColor,
+                 originalFGC = Console.ForegroundColor;
+
+    Console.SetCursorPosition(x, y);
+    Console.BackgroundColor = bgc == null ? originalBGC : (ConsoleColor) bgc;
+    Console.ForegroundColor = fgc == null ? originalFGC : (ConsoleColor) fgc;
+    Console.Write(c);
+    Console.BackgroundColor = originalBGC;
+    Console.ForegroundColor = originalFGC;
+    Console.SetCursorPosition(left, top);
+
+}
 
 void WriteAt(int x, int y, ConsoleColor inner, int direction)
 {
@@ -34,16 +61,13 @@ void WriteAt(int x, int y, ConsoleColor inner, int direction)
         switch (direction)
         {
             case 1:
+            case 3:
                 Console.SetCursorPosition(x, y);
                 Console.BackgroundColor = ConsoleColor.Green;
             break;
             case 2:
                 Console.SetCursorPosition(x + 1, y);
                 Console.BackgroundColor = ConsoleColor.Black;
-            break;
-            case 3:
-                Console.SetCursorPosition(x, y);
-                Console.BackgroundColor = ConsoleColor.Green;
             break;
             case 4:
                 Console.SetCursorPosition(x - 1, y);
@@ -62,6 +86,7 @@ void WriteAt(int x, int y, ConsoleColor inner, int direction)
 //I'll find a smoother solution to this later
 while (true)
 {
+
     //pain, so much pain
     switch (Console.ReadKey(true).Key)
     {
@@ -117,12 +142,14 @@ void printMap(Level l, ConsoleColor border, ConsoleColor inner, int X, int Y)
 //Way too overcomplicated
 bool CollisionCheckFor(Level l, int X, int Y, int direction)
 {
+
     //1 - Up
     //2 - Left
     //3 - Down
     //4 - Right
     switch (direction)
     {
+
         case 1:
             if(Y == 1 || l.items.items.Count(x=> x.y == Y && x.x == X + 1) == 1) return true;
         break;
