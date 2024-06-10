@@ -45,7 +45,7 @@ namespace DragonQuest.Game {
 
         }
 
-        public void Run() {
+        public void Start() {
 
             /*
             

@@ -26,8 +26,9 @@ namespace DragonQuest.Levels {
 
         }
 
-        public static Level GetLevel(int id) {
+        public static Level? GetLevel(int id) {
 
+            foreach (Level l in levels) if (l.ID == id) return l;
             return null; // make it so that it gets the level by its ID and returns it 
 
         }

@@ -1,6 +1,5 @@
-﻿using DragonQuest.Levels;
-using DragonQuest.Misc;
-using DragonQuest_Lib.LevelClasses;
+﻿using DragonQuest.Game;
+using DragonQuest.Levels;
 /*Levels levels = new(new StreamReader("Levels.txt"));*/ //Reads the levels file thingie
 /* This was a test
 foreach (var level in levels.levels)
@@ -13,13 +12,15 @@ foreach (var level in levels.levels)
     Console.WriteLine();
 }*/
 
+/*
+
 int playerPosX = 1; //I'll make a Player class later
 int playerPosY = 1;
 int levelID = 3;
 
 LevelManager.Init();
 
-/*
+
 
 initConsole();
 printMap(levels.Data(levelID), ConsoleColor.White, ConsoleColor.Black, playerPosX, playerPosY); //This prints the outline and the items of a map
@@ -159,3 +160,10 @@ bool CollisionCheckFor(Level l, int X, int Y, int direction)
 }
 
 //I'm so tired :3*/
+
+LevelManager.Init();
+Level? l = LevelManager.GetLevel(69);
+if (l == null) return;
+GameInstance gi = new GameInstance(l);
+gi.Load();
+gi.Start();
