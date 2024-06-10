@@ -1,5 +1,7 @@
-﻿using DragonQuest_Lib.LevelClasses;
-Levels levels = new(new StreamReader("Levels.txt")); //Reads the levels file thingie
+﻿using DragonQuest.Levels;
+using DragonQuest.Misc;
+using DragonQuest_Lib.LevelClasses;
+/*Levels levels = new(new StreamReader("Levels.txt"));*/ //Reads the levels file thingie
 /* This was a test
 foreach (var level in levels.levels)
 {
@@ -15,6 +17,10 @@ int playerPosX = 1; //I'll make a Player class later
 int playerPosY = 1;
 int levelID = 3;
 
+LevelManager.Init();
+
+/*
+
 initConsole();
 printMap(levels.Data(levelID), ConsoleColor.White, ConsoleColor.Black, playerPosX, playerPosY); //This prints the outline and the items of a map
 
@@ -24,25 +30,11 @@ void initConsole() {
     Console.CursorVisible = false;
 
     for (int x = 0; x < Console.WindowWidth; x++)
-        for (int y = 0; y < Console.WindowHeight; y++) RealWriteAt(x, y, ' ', ConsoleColor.Black, null);
+        for (int y = 0; y < Console.WindowHeight; y++) Canvas.WriteAt(x, y, ' ', ConsoleColor.Black, null);
 
 }
 
-void RealWriteAt(int x, int y, char c, ConsoleColor? bgc, ConsoleColor? fgc) {
 
-    (int left, int top) = Console.GetCursorPosition();
-    ConsoleColor originalBGC = Console.BackgroundColor,
-                 originalFGC = Console.ForegroundColor;
-
-    Console.SetCursorPosition(x, y);
-    Console.BackgroundColor = bgc == null ? originalBGC : (ConsoleColor) bgc;
-    Console.ForegroundColor = fgc == null ? originalFGC : (ConsoleColor) fgc;
-    Console.Write(c);
-    Console.BackgroundColor = originalBGC;
-    Console.ForegroundColor = originalFGC;
-    Console.SetCursorPosition(left, top);
-
-}
 
 void WriteAt(int x, int y, ConsoleColor inner, int direction)
 {
@@ -166,4 +158,4 @@ bool CollisionCheckFor(Level l, int X, int Y, int direction)
     return false;
 }
 
-//I'm so tired :3
+//I'm so tired :3*/
