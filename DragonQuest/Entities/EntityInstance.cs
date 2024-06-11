@@ -40,7 +40,7 @@ namespace DragonQuest.Entities {
 
         public void RelativeMove(int dX, int dY) {
 
-            if (IsObstacle(dX, dY)) return;
+            if (IsObstacle(this.posX + dX, this.posY + dY)) return;
             this.posX += dX;
             this.posY += dY;
 
