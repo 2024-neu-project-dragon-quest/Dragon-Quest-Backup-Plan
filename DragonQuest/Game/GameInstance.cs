@@ -57,7 +57,7 @@ namespace DragonQuest.Game {
 
             while (running) {
 
-                Thread.Sleep(20);
+                // Thread.Sleep(20);
                 level.Tick();
 
             }
